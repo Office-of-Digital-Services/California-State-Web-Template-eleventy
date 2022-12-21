@@ -1,5 +1,13 @@
 # Version History
 
+
+## 6.1.0 (production release)
+- New icons in the CAGov icons font library
+- New side navigation component
+- Automatic "on this page" navigation component
+- New utility CSS classes
+- Improved accessibility
+- Custom CSS front matter options
 ## 6.0.9
 - Updated alert banner
 - Added 8 new icons to the CAGov icons font
