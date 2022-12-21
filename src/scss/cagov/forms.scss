@@ -7,11 +7,13 @@
 .custom-select {
 	border-radius: $border-radius-base;
 	border-color: $input-border;
+ font-size: 1.375rem;
 }
 
 label {
 	font-weight: 600;
  font-size: $font-size-regular;
+ margin-bottom: 0.5rem;
 }
 .input-group-text {
 	border-radius: $border-radius-base;
@@ -314,4 +316,7 @@ select:focus {
 
 .form-group {
 	margin-bottom: 1rem;
+}
+.invalid-feedback {
+	font-size: .75em;
 }

@@ -190,6 +190,7 @@ p {
 .lead {
  font-size: $font-size-large;
  margin-bottom: 1rem;
+ font-weight: $font-weight-5;
  @include media-breakpoint-up(sm) {
   font-size: calc(#{$font-size-large} + #{$ratio});
   margin-bottom: calc(1rem + #{$ratio});
@@ -512,6 +513,7 @@ a.list-group-item {
 .footer-social-links a,
 img ~,
 svg ~,
+*[class*="ca-gov-icon-"],
 [class*="ca-gov-icon-"] ~,
 .pdf-link-icon ~ {
   .external-link-icon {
