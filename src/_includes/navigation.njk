@@ -1,52 +1,60 @@
-<nav id="navigation" class="main-navigation dropdown">
- <ul id="nav_list" class="top-level-nav">
-  <li class="nav-item">
-       {% if landing === "Home" %}
-       <a class="first-level-link active" href="/">Home</a>
-       {% else %}
-       <a class="first-level-link" href="/">Home</a>
-       {% endif %} 
-   </li>
-   {% if landing === "Get started" %}
-   <li class="nav-item active">
-    {% else %} 
+<!-- Site navigation structural component -->
+<nav
+  id="navigation"
+  class="main-navigation dropdown"
+  aria-label="Main navigation">
+  <ul id="nav_list" class="top-level-nav">
     <li class="nav-item">
-     {% endif %}      
-       <a class="first-level-link" href="/get-started/">Getting started</a>
+      <a
+        class="first-level-link {{- ' active' if landing === 'Home' }}"
+        href="/"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item {{- ' active' if landing === 'Get started' }}">
+      <a class="first-level-link" href="/get-started/">Getting started</a>
 
-          <div class="sub-nav">
+      <div class="sub-nav">
+        <ul class="second-level-nav">
+          <li class="unit1">
+            <a
+              href="/get-started/getting-started.html"
+              class="second-level-link"
+              >Get started</a
+            >
+          </li>
+          <li class="unit1">
+            <a href="/get-started/updates.html" class="second-level-link"
+              >Update your template</a
+            >
+          </li>
+          <li class="unit1">
+            <a
+              href="/get-started/structure/structure.html"
+              class="second-level-link"
+              >Structure</a
+            >
+          </li>
+          <li class="unit1">
+            <a href="/get-started/cdn.html" class="second-level-link">CDN</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a
+        class="first-level-link {{- ' active' if landing === 'About' }}"
+        href="/about.html"
+        >About State Web Template</a
+      >
+    </li>
 
-    <ul class="second-level-nav">
-    <li class="unit1">
-      <a href="/get-started/getting-started.html" class="second-level-link">Get started</a>
-     </li>
-     <li class="unit1">
-      <a href="/get-started/updates.html" class="second-level-link">Update your template</a>
-     </li>
-     <li class="unit1">
-      <a href="/get-started/structure/structure.html" class="second-level-link">Structure</a>
-     </li>
-     <li class="unit1">
-      <a href="/get-started/cdn.html" class="second-level-link">CDN</a>
-     </li>
-    </ul>
-   </div>
-   </li>
-   <li class="nav-item">
-       {% if landing === "About" %}
-       <a class="first-level-link active" href="/about.html">About State Web Template</a>
-       {% else %}
-       <a class="first-level-link" href="/about.html">About State Web Template</a>
-       {% endif %} 
-   </li>
-   <li class="nav-item">
-       {% if landing === "Contact" %}
-       <a class="first-level-link active" href="/contact.html">Contact us</a>
-       {% else %}
-       <a class="first-level-link" href="/contact.html">Contact us</a>
-       {% endif %} 
-   </li>
-
- </ul>
-
+    <li class="nav-item">
+      <a
+        class="first-level-link {{- ' active' if landing === 'Contact' }}"
+        href="/contact.html"
+        >Contact us</a
+      >
+    </li>
+  </ul>
 </nav>

@@ -18,17 +18,10 @@
     {% include "../modules/branding.html" %}
     {% include "../mobile-controls.njk" %}
         <div class="navigation-search">
-            <!-- navigation types -->
-            {% if navigation %}
-              {% include navigation %}
-		        {% else %}
-		          {% include "../navigation.njk" %}
-            {% endif %}
-              {% if search === "Featured" %}
-              <div id="head-search" class="search-container featured-search">
-              {% else %}
-              <div id="head-search" class="search-container">
-             {% endif %}
+        <!-- navigation types -->
+        {% if navigation -%} {%- include navigation -%} {%- else -%} {%- include
+        "../navigation.njk" -%} {%- endif %}
+              <div id="head-search" class="search-container {{- ' featured-search' if search === 'Featured' }}">
               {% include "../search.njk" %}
             </div>
         </div>

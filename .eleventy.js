@@ -13,25 +13,28 @@ module.exports = function (eleventyConfig) {
   "src/scss/custom": "css/custom"
  });
 
-
  // site crawler
- eleventyConfig.addPassthroughCopy('robots.txt');
+ eleventyConfig.addPassthroughCopy("robots.txt");
 
  // site icon
- eleventyConfig.addPassthroughCopy('favicon.ico');
+ eleventyConfig.addPassthroughCopy("favicon.ico");
 
  // sitemap
- eleventyConfig.addPassthroughCopy('sitemap.xml');
+ eleventyConfig.addPassthroughCopy("sitemap.xml");
 
  // web.config
- eleventyConfig.addPassthroughCopy('web.config');
+ eleventyConfig.addPassthroughCopy("web.config");
 
  // Markdown rendering onfigurarion
- eleventyConfig.addPairedShortcode("markdown", (content) => {
+ eleventyConfig.addPairedShortcode("markdown", content => {
   return md.render(content);
  });
 
  return {
+  // allow nunjucks templating in .html files
+  htmlTemplateEngine: "njk",
+  markdownTemplateEngine: "njk",
+  templateFormats: ["html", "njk", "11ty.js"],
   dir: {
    // site content pages
    input: "pages",
@@ -40,7 +43,7 @@ module.exports = function (eleventyConfig) {
    includes: "../src/_includes",
    layouts: "../src/_includes/layouts",
    // site final outpuut directory
-   output: "_site",
-  },
+   output: "_site"
+  }
  };
 };

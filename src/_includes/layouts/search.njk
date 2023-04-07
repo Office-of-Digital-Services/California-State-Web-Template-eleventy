@@ -29,22 +29,17 @@
     <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
     </div>
-    {% if alert %}
-      {% include alert %}
-    {% endif %}
-    {% include "../utility-header.njk" %}
-    {% include "../settings.njk" %}
-    {% include "../site-header.njk" %}
-    {% include "../mobile-controls.njk" %}
+ {% if alert %} {% include alert %} {% endif %} {% include
+      "../utility-header.njk" %} {% include "../settings.njk" %} {% include
+      "../site-header.njk" %} {% include "../mobile-controls.njk" %}
 
-    <div class="navigation-search full-width-nav container">
-            <div id="head-search" class="search-container">
-			</div>
-      {% include "../navigation.njk" %}
-    </div>
+      <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container"></div>
+        {% include "../navigation.njk" -%}
+      </div>
   </header>
 
-{% block content %}
+{%- block content %}
 <div id="main-content" class="main-content">
 		<main class="main-primary" id="main">
 			<!--Search result section-->
@@ -53,16 +48,23 @@
                     <!--Uncomment if you prefer to use original google search box. Be advided that original custom search box is not meeting WCAG accessibility standards. -->
                     <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
-                    <form id="Search" class="pos-rel" action="/serp.html">
-                        <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                        <input type="text" id="q" name="q" aria-labelledby="SearchInput"
-                            placeholder="Search this website" class="search-textfield height-40" style="width:95%" />
-                        <button type="submit"
-                            class="gsc-search-button width-60 height-40 pos-abs color-white right-0 top-0 border-0 bg-gray-600 bg-gray-800-hover"><span
-                                class="ca-gov-icon-search" aria-hidden="true"></span><span
-                                class="sr-only">Submit</span></button>
+                    <form id="Search" class="d-flex" action="?">
+                      <span class="sr-only" id="SearchInput">Custom Google Search</span>
+                      <input
+                        type="search"
+                        id="q"
+                        name="q"
+                        aria-labelledby="SearchInput"
+                        placeholder="Search this website"
+                        class="search-textfield height-40"
+                        style="width:95%" />
+                      <button
+                        type="submit"
+                        class="gsc-search-button width-60 height-40 color-white border-0 bg-gray-600 bg-gray-800-hover">
+                        <span class="ca-gov-icon-search" aria-hidden="true"></span>
+                        <span class="sr-only">Submit</span>
+                      </button>
                     </form>
-
                 </div>
             </div>
             <div class="section">
@@ -82,34 +84,21 @@
 			
 		</main>
 </div>
-{% endblock %}
-
-  {% include "../global-footer.njk" %}
-  {% include "../scripts.njk" %}
+ {% endblock -%} {%- include "../global-footer.njk" -%} {%- include
+    "../scripts.njk" %}
 
     <script>
-        // Search ID
-        var cx = '05e92f21f387b4800';// Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script');
-        s[s.length - 1].parentNode.insertBefore(gcse, s[s.length - 1]);
+      // Search ID
+      var cx = '05e92f21f387b4800';// Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script');
+      s[s.length - 1].parentNode.insertBefore(gcse, s[s.length - 1]);
 
-
-
-        // extracting search query from the url parameter and applying it to the searchbox
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-                vars[key] = value;
-            });
-            return vars;
-        }
-        var query = getUrlVars()["q"];
-        document.querySelector('input[name=q]').value = query;
-
+      // extracting search query from the url parameter and applying it to the searchbox
+      document.querySelector('input[name=q]').value = new URLSearchParams(window.location.search).get("q");
     </script>
 </body>
 </html>

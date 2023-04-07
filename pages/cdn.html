@@ -5,31 +5,28 @@ layout: sidenav.njk
 permalink: "get-started/cdn.html"
 ---
 
-
-
 <h1 class="mt-lg-0">State Web Template CDN</h1>
 <nav class="page-navigation"></nav>
 <p>
- Users can load your website faster by serving State Template's static resources such as css,
- JavaScript, fonts, and images in nodes all around the world.
- When a user requests your site, the node closest in proximity to user will deliver the static
- content,
- ensuring the shortest distance for the data to travel (reduced latency), therefore providing the
- fastest
- site experience.
+  Users can load your website faster by serving State Template's static
+  resources such as css, JavaScript, fonts, and images in nodes all around the
+  world. When a user requests your site, the node closest in proximity to user
+  will deliver the static content, ensuring the shortest distance for the data
+  to travel (reduced latency), therefore providing the fastest site experience.
 </p>
 
 <h2>CDN example using core CSS files</h2>
-<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span></span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/colortheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.1.1/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span></span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.1.1/css/colortheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span><span class="text-accent-p2">&gt;</span><br /></pre>
 
 <h2>CDN example using JS files</h2>
-<pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
-
+<pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.1.1/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
 
 <h2>Sample page using State Template CDN</h2>
-<p>Here is the example of using CDN for core CSS/JS State Template files together with Server Side
- Includes (ssi):</p>
+<p>
+  Here is the example of using CDN for core CSS/JS State Template files together
+  with Server Side Includes (ssi):
+</p>
 <pre>
 <span class="text-success">&lt;!doctype html&gt;</span>
  <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
@@ -42,8 +39,8 @@ permalink: "get-started/cdn.html"
    <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
 
    <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
-   <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
-   <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.1.1/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.1.1/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
 
   <span class="text-accent-p2">&lt;/head&gt;</span>
  <span class="text-accent-p2">&lt;body&gt;</span>
@@ -71,9 +68,12 @@ permalink: "get-started/cdn.html"
    <span class="text-success">&lt;!-- global footer goes here --&gt;</span>
 
    <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
-   <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+   <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.1.1/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
  <span class="text-accent-p2">&lt;/body&gt;</span>
  <span class="text-accent-p2">&lt;/html&gt;</span>
 </pre>
-<p><span class="text-highlight-primary">Note:</span> The web server that hosts the State Template should be
- configured to process SSI's with the .html extension.</p>
+<p>
+  <span class="text-highlight-primary">Note:</span> The web server that hosts
+  the State Template should be configured to process SSI's with the .html
+  extension.
+</p>

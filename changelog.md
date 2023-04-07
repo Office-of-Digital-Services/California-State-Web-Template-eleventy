@@ -1,6 +1,12 @@
 # Version History
 
 
+## 6.1.1
+- Updated tab component JS to make it more accessible
+- Added pagination component
+- Added executive profile component
+- Updated search results look and feel
+- Added newsroom patterns including newsroom, newslist and news article
 ## 6.1.0 (production release)
 - New icons in the CAGov icons font library
 - New side navigation component
