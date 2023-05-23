@@ -1,5 +1,5 @@
 /* -----------------------------------------
-   SITE HEADER -  /source/scss/cagov/site-header.scss
+   SITE HEADER -  /source/scss/cagov/site-header.scss (branding)
 ----------------------------------------- */
 
 .branding {
@@ -11,38 +11,42 @@
   // 992px
   @media (min-width: $screen-md-min) {
     position: unset;
-    height: 82px !important;
   }
 
   .header-organization-banner {
     -webkit-transition: all 0.3s;
     transition: all 0.3s; // Smooth transition for compact header
-    padding-left: 15px;
+    padding: 0.5rem 0 0.5rem 1rem;
+    // 991px
     @media (max-width: $screen-sm-max) {
       position: relative;
       max-width: 400px;
       margin-left: 1rem;
+      margin-right: 20%;
       padding-top: 0.5rem;
       padding-left: 0;
-      padding-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-content: center;
     }
 
     img {
-      width: 100%;
       max-width: 300px;
-      max-height: 70px;
+      max-height: 55px;
       object-fit: contain !important;
       object-position: left;
 
       @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
-        // Beta 5.0 addition
         max-width: 225px;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        max-height: 44px;
       }
     }
 
     // Move logo above navigation
     a {
-      z-index: 26; // navigation is 25
       position: relative;
       text-decoration: none;
       color: black;
@@ -54,25 +58,21 @@
 
       .logo-assets {
         display: flex;
-        align-content: center;
-        flex-direction: column;
-        @media (min-width: $screen-sm-min) {
-          flex-direction: row;
-        }
+        flex-flow: wrap;
+        min-height: 4rem;
+        align-items: center;
 
         .logo-img {
           max-width: 100%;
-          width: 80px;
-          height: auto;
+          min-height: auto;
+          height: 4rem;
           display: inline-block;
           transition: all 0.3s;
         }
 
         .logo-text {
           padding-left: 5px;
-          @media (max-width: $screen-sm-max) {
-            padding-top: 0.5rem;
-          }
+          // 991px
           .logo-state {
             font-size: 1rem;
             font-family: "Public Sans", sans-serif;
@@ -83,6 +83,9 @@
             line-height: 1.2em;
             transition: all 0.3s;
             display: block;
+            @media (max-width: $screen-sm-max) {
+              font-size: 0.78125rem;
+            }
           }
           .logo-dept {
             font-size: 1.75rem;
@@ -95,32 +98,24 @@
             line-height: 1.2em;
             transition: all 0.3s;
             display: block;
+            @media (max-width: $screen-sm-max) {
+              font-size: 1rem;
+            }
           }
         }
 
-        // 992px
-        @media (min-width: $screen-md-min) {
-          align-items: center;
-          height: 80px;
+        // MOBILE 992px
+        @media (max-width: $screen-sm-max) {
+          min-height: auto;
         }
       }
     }
-  }
-  // Goes full width on 767 breakpoint
-  @media (max-width: $screen-xs-max) {
-    max-width: 100%;
   }
 }
 
 // FIXED HEADER LOGO
 .fixed.compact .branding .header-organization-banner {
   .logo-assets {
-    height: 60px;
-
-    .logo-img {
-      width: 70px;
-    }
-
     .logo-text {
       .logo-state {
         font-size: 0.8rem;
@@ -143,16 +138,6 @@
 
 @media (min-width: $screen-sm-min) {
   .fixed.compact {
-    // .search-container {
-    //   top: 51px;
-    // }
-    // covering edge case  where no links are set. Need this to maintain
-    // search box and ask group positioning
-
-    .branding {
-      height: 57px !important; // Beta 5.0 addition
-    }
-
     .header-organization-banner {
       height: 55px; // Beta 5.0 addition
       max-height: 45px; // Beta 5.0 addition
