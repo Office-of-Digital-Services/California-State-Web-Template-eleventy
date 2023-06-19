@@ -62,4 +62,3 @@ git push origin master
 /_site
 /StateTemplate.sln
 /website.publishproj
-/package-lock.json
