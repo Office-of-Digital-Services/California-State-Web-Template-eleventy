@@ -7,8 +7,14 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "prettier.documentSelectors": ["**/*.njk"],
+  "emmet.includeLanguages": {
+    "njk": "html"
+  },
   "formattingToggle.affects": ["editor.formatOnSave"],
-  "[njk]": {
-    "editor.defaultFormatter": "eseom.nunjucks-template"
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
