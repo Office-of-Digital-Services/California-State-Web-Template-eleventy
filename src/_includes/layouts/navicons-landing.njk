@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <title>{{ title }}</title>
-    <meta charset="utf-8" />
-    <meta name="Author" content="State of California" />
-    <meta name="Description" content="State of California" />
-    <meta name="Keywords" content="California, government" />
+    <meta charset="utf-8"/>
+    <meta name="Author" content="State of California"/>
+    <meta name="Description" content="State of California"/>
+    <meta name="Keywords" content="California, government"/>
     {% include "../head-js-css.njk" %}
   </head>
   <body class="primary">
@@ -13,23 +13,28 @@
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
       </div>
-      {%- include "../utility-header.njk" -%} {%- include
-      "../modules/branding.html" -%} {%- include "../mobile-controls.njk" %}
-      <div class="navigation-search">
+      {%- include "../utility-header.njk" -%}
+      {%- include "../modules/branding.html" -%}
+      {%- include
+      "../mobile-controls.njk" %}
+      <div
+        class="navigation-search">
         <!-- navigation types -->
-        {%- if navigation -%} {%- include navigation -%} {%- else -%} {%-
-        include "../navigation.njk" -%} {%- endif %}
-        <div
-          id="head-search"
-          class="search-container {{ - ' featured-search' if search === 'Featured' }}">
+        {%- if navigation -%}
+          {%- include navigation -%}
+        {%- else -%}
+          {%- include "../navigation.njk" -%}
+        {%- endif %}
+        <div id="head-search" class="search-container {{ - ' featured-search' if search === 'Featured' }}">
           {% include "../search.njk" %}
         </div>
       </div>
     </header>
     {% block content %}
-    <div id="main-content" class="main-content">
-      <main class="main-primary" id="main">{{ content | safe }}</main>
-    </div>
-    {% endblock %} {% include "../global-footer.njk" %}
+      <div id="main-content" class="main-content">
+        <main class="main-primary" id="main">{{ content | safe }}</main>
+      </div>
+    {% endblock %}
+    {% include "../global-footer.njk" %}
   </body>
 </html>
