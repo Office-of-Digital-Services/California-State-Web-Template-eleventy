@@ -1,6 +1,6 @@
 {
   "name": "cagov-template-v6",
-  "version": "6.1.2",
+  "version": "6.2.0",
   "description": "CA State Web Template",
   "scripts": {
     "watch:js": "rollup --config rollup.config.js --watch",
