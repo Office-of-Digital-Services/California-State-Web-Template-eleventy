@@ -2,7 +2,7 @@ import { terser } from "rollup-plugin-terser";
 
 export default [
   {
-    input: "src/js/index.js",
+    input: "src/js/custom.js",
     output: [
       {
         file: "_site/js/custom.js",

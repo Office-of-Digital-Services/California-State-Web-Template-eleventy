@@ -1,0 +1,40 @@
+---
+title: State Web Template NPM package
+landing: Get started
+layout: sidenav.njk
+permalink: "get-started/npm.html"
+---
+
+<h1 class="mt-lg-0">State Web Template NPM package</h1>
+<nav class="page-navigation"></nav>
+<p>
+  This eleventy project is using State Web Template NPM package that is exported from the node_modules into <code>/state-template/</code> directory when an user is executing the <code>npm build</code> or <code>npm start</code> commands. 
+</p>
+
+<h2>How it works</h2>
+<p>To load NPM State Web Template package we have added following code into our eleventy.js file.</p>
+<pre>module.exports = function(eleventyConfig) {
+  // Copy state template core files to site output
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/@cagovweb/state-template/dist": "state-template"
+  });
+};</pre>
+
+<p>Once State Web Template package is loaded into our project we can make references to the State Web Template's core CSS and JS files in our <code>head-js-css.njk</code> inclide:</p>
+
+<pre><span class="text-accent-p2">&lt;head&gt;</span>
+  ...
+  <span class="text-muted">&lt;!-- State Web Template core files --&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/cagov.core.min.css"</span><span class="text-accent-p2">&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+
+  <span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"/state-template/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+
+ <span class="text-accent-p2">&lt;/head&gt;</span>
+</pre>
+
+<h2>Documentation</h2>
+<p>
+  For more information about State Web Template NPM package and its usage, please visit <a href="https://www.npmjs.com/package/@cagovweb/state-template">State Web Template NPM package</a> release page at NPM portal.
+</p>
+
