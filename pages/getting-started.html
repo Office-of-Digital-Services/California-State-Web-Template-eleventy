@@ -278,9 +278,8 @@ layout: page.njk
           files and webpages.
           <ul>
             <li>
-              <span class="bold">css</span>
-              – This folder contains the minified CSS files that are generated
-              through compilation of the CSCC files.
+              <span class="bold">state-template</span>
+              – This folder contains all the State Web Template core files. There are three directories: css, js and fonts.
             </li>
             <li>
               <span class="bold">fonts</span>
@@ -288,15 +287,13 @@ layout: page.njk
               Template.
             </li>
             <li>
-              <span class="bold">images</span>
-              – This folder contains the structural images used by the State Web
-              Template.
+              <span class="bold">css</span>
+              – Contain compiled core State Web Template css files
             </li>
             <li>
               <span class="bold">js</span>
-              – Contains the compiled, minified JavaScript files that are used
-              by the State Web Template. Any third party JavaScript libraries
-              are also included in this folder.
+              – Contains the compiled JavaScript files that are used
+              by the State Web Template.
             </li>
           </ul>
         </li>
@@ -310,29 +307,24 @@ layout: page.njk
           Source folder. Contains includes, modules, fonts, images, SCSS and
           JavaScript files.
           <ul>
-            <li class="m-t">
-              <span class="bold">root:</span>
-              Contains all static files that should appear in the website root
-              (such as favicon, webconfig, sitemap, etc.)
+            <li>
+              <strong>_includes</strong> - This folder contains the common template
+              components used on various pages in the State Web Template (for example,
+              header, footers, navigation, etc.).
             </li>
-            <li class="m-t">
-              <span class="bold">Images:</span>
-              Contains all the images used by the website.
+            <li>
+              <strong>css</strong> - Can contain custom css files that can be referenced in the  front mater of the specific pages or in the <code>head</code> area of the head-js-css.njk include
             </li>
-            <li class="m-t">
-              <span class="bold">js:</span>
-              Contains uncompiled JavaScript files used by the website. Third
-              party JavaScript libraries are also included in this folder.
+            <li>
+              <strong>images</strong> - This folder contains all the images used by
+              the State Template.
             </li>
-            <li class="m-t">
-              <span class="bold">_includes:</span>
-              Contains the common template components or code used on some or
-              all pages on the website. Examples: header, footer, navigation,
-              etc.).
+            <li>
+              <strong>js</strong> - Contains custom.js file that potentially can be used for any custom JavaScript code
             </li>
-            <li class="m-t">
-              <span class="bold">scss:</span>
-              Contains all the raw SASS stylesheets files.
+            
+            <li>
+              <strong>root</strong> - Contains website's essential files such as sitemap, web.config, favicon, robots, etc.
             </li>
           </ul>
         </li>
@@ -344,33 +336,26 @@ layout: page.njk
       <pre class="mb-0">
 StateTemplate/
 ├── _site/
-   └── css/
-   │   ├── cagov.core.css
-   │   ├── cagov.font-only.css
-   │   ├── colorscheme-oceanside.css
-   │   └── Other color scheme css files
-   └── fonts/
-   │   ├── CaGov.eot
-   │   └── etc.
-   └── images/
-   │   ├── template-logo.png
-   │   ├── Ca-Gov-Logo-Gold.svg
-   │   └── etc.
-   └── js/
-       ├── cagov.core.js
-       ├── search.js
-       └── libs/ 
-   └── index.html
-   └── etc...
+  └── index.html
+  └── state-template/      
+      └── css/
+      │   ├── cagov.core.css
+      │   ├── colorscheme-oceanside.css
+      │   └── Other color scheme css files
+      └── fonts/
+      │   ├── CaGov.woff2
+      │   └── etc.
+      └── js/
+          └── cagov.core.js
+  └── images/
+      ├── template-logo.png
+      ├── Ca-Gov-Logo-Gold.svg
+      └── etc.
 └── pages/
-   ├── index.html
-   └── etc...
-       └── sample/
-           ├── accordions.html
-           ├── color.html
-           └── etc...
+  ├── index.html
+  └── etc...
 └── src/
-   └── _includes/
+  └── _includes/
         ├── global-footer.njk
         ├── etc...
         └── layouts/
@@ -379,14 +364,14 @@ StateTemplate/
         └── modules/
             ├── accordion.html
             └── etc...
-    └── fonts/
+    └── css/
     └── images/
     └── js/
     └── root/
-    └── scss/
-├── eleventy.js
 ├── package.json
-└── rollup.config.js
+├── eleventy.js
+├── rollup.config.js
+└── etc...
       </pre>
     </div>
   </div>
