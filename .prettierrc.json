@@ -12,6 +12,13 @@
       "options": {
         "parser": "html"
       }
+    },
+    {
+      "files": "web.config",
+      "options": {
+        "parser": "html",
+        "printWidth": 120
+      }
     }
   ]
 }
