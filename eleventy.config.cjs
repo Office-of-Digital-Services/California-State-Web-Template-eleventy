@@ -1,5 +1,6 @@
 //@ts-check
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
+const domain = "https://template.webstandards.ca.gov";
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -13,6 +14,12 @@ module.exports = function (
     "src/root": "/",
     "node_modules/@cagovweb/state-template/dist": "state-template"
   });
+
+  //Sorted list of all the samples
+  eleventyConfig.addFilter(
+    "canonical",
+    (/** @type {{url:string}} */ page) => domain + page.url
+  );
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
