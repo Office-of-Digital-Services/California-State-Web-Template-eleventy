@@ -6,7 +6,7 @@
   },
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "prettier.documentSelectors": ["**/*.njk"],
+  "prettier.documentSelectors": ["**/*.njk", "**/web.config"],
   "emmet.includeLanguages": {
     "njk": "html"
   },

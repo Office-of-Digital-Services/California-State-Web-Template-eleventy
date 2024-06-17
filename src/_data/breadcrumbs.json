@@ -1,70 +1,70 @@
 {
- "pages": [
-  {
-   "text": "Get started",
-   "url": "/get-started/getting-started.html"
-  },
-  {
-   "text": "Update your template",
-   "url": "/get-started/updates.html"
-  },
-  {
-   "text": "Structure",
-   "url": "/get-started/structure/structure.html",
-   "parent": "Get started",
-   "parentURL": "/get-started/getting-started.html"
-  },
-  {
-   "text": "Page layouts",
-   "url": "/get-started/structure/layouts.html",
-   "parent": "Get started",
-   "parentURL": "/get-started/getting-started.html",
-   "subparent": "Structure",
-   "subparentURL": "/get-started/structure/structure.html"
-  },
-  {
-   "text": "File and folder structure",
-   "url": "/get-started/structure/files.html",
-   "parent": "Get started",
-   "parentURL": "/get-started/getting-started.html",
-   "subparent": "Structure",
-   "subparentURL": "/get-started/structure/structure.html"
-  },
-  {
-   "text": "NPM package",
-   "url": "/get-started/npm.html"
-  },
-  {
-   "text": "Template updates",
-   "url": "/updates.html"
-  },
-  {
-   "text": "About",
-   "url": "/about.html"
-  },
-  {
-   "text": "Contact",
-   "url": "/contact.html"
-  },
-  {
-   "text": "Conditions of use",
-   "url": "/use.html"
-  },
-  {
-   "text": "Privacy policy",
-   "url": "/privacy.html"
-  },
-  {
-   "text": "Accessibility",
-   "url": "/accessibility.html"
-  },
-  {
-   "text": "Search results",
-   "url": "/serp.html"
-  },
-  {
-   "text": "Search directory",
-   "url": "/search-directory.html"
-  }
- ]
+  "pages": [
+    {
+      "text": "Get started",
+      "url": "/get-started/getting-started.html"
+    },
+    {
+      "text": "Update your template",
+      "url": "/get-started/updates.html"
+    },
+    {
+      "text": "Structure",
+      "url": "/get-started/structure/structure.html",
+      "parent": "Get started",
+      "parentURL": "/get-started/getting-started.html"
+    },
+    {
+      "text": "Page layouts",
+      "url": "/get-started/structure/layouts.html",
+      "parent": "Get started",
+      "parentURL": "/get-started/getting-started.html",
+      "subparent": "Structure",
+      "subparentURL": "/get-started/structure/structure.html"
+    },
+    {
+      "text": "File and folder structure",
+      "url": "/get-started/structure/files.html",
+      "parent": "Get started",
+      "parentURL": "/get-started/getting-started.html",
+      "subparent": "Structure",
+      "subparentURL": "/get-started/structure/structure.html"
+    },
+    {
+      "text": "NPM package",
+      "url": "/get-started/npm.html"
+    },
+    {
+      "text": "Template updates",
+      "url": "/updates.html"
+    },
+    {
+      "text": "About",
+      "url": "/about.html"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact.html"
+    },
+    {
+      "text": "Conditions of use",
+      "url": "/use.html"
+    },
+    {
+      "text": "Privacy policy",
+      "url": "/privacy.html"
+    },
+    {
+      "text": "Accessibility",
+      "url": "/accessibility.html"
+    },
+    {
+      "text": "Search results",
+      "url": "/serp.html"
+    },
+    {
+      "text": "Search directory",
+      "url": "/search-directory.html"
+    }
+  ]
 }

@@ -1,30 +1,30 @@
 {
- "sidenavigation": [
-  {
-   "text": "Get started",
-   "url": "/get-started/getting-started.html"
-  },
-  {
-   "text": "Update your template",
-   "url": "/get-started/updates.html"
-  },
-  {
-   "text": "Structure",
-   "url": "/get-started/structure/structure.html",
-   "subnav": [
+  "sidenavigation": [
     {
-     "text": "Page layouts",
-     "url": "/get-started/structure/layouts.html"
+      "text": "Get started",
+      "url": "/get-started/getting-started.html"
     },
     {
-     "text": "Folders and files",
-     "url": "/get-started/structure/files.html"
+      "text": "Update your template",
+      "url": "/get-started/updates.html"
+    },
+    {
+      "text": "Structure",
+      "url": "/get-started/structure/structure.html",
+      "subnav": [
+        {
+          "text": "Page layouts",
+          "url": "/get-started/structure/layouts.html"
+        },
+        {
+          "text": "Folders and files",
+          "url": "/get-started/structure/files.html"
+        }
+      ]
+    },
+    {
+      "text": "NPM package",
+      "url": "/get-started/npm.html"
     }
-   ]
-  },
-  {
-   "text": "NPM package",
-   "url": "/get-started/npm.html"
-  }
- ]
+  ]
 }
