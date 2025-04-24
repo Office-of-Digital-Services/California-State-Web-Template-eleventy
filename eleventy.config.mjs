@@ -36,10 +36,6 @@ export default async function (eleventyConfig) {
       input: "pages",
       includes: "_includes",
       output: "_site"
-    },
-    // Exclude _includes folder from being processed
-    passthroughFileCopy: true,
-    pathPrefix: "/",
-    dataTemplateEngine: false
+    }
   };
 }
