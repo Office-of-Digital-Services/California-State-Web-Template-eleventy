@@ -11,7 +11,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-    {% include "../head-js-css.njk" %}
+    {% include "../../src/components/head-js-css.njk" %}
     <!--hiding search link from page navigation sinse the search box is already open-->
     <style>
       #nav-item-search,
@@ -34,11 +34,12 @@
         <a href="#main-content">Skip to Main Content</a>
       </div>
       {% if alert %} {% include alert %} {% endif %} {% include
-      "../utility-header.njk" %} {% include "../site-header.njk" %} {% include
-      "../mobile-controls.njk" %}
+      "../../src/components/utility-header.njk" %} {% include
+      "../../src/components/site-header.njk" %} {% include
+      "../../src/components/mobile-controls.njk" %}
       <div class="navigation-search full-width-nav container">
         <div id="head-search" class="search-container"></div>
-        {% include "../navigation.njk" -%}
+        {% include "../../src/components/navigation.njk" -%}
       </div>
     </header>
     {%- block content %}
@@ -78,7 +79,7 @@
         </div>
       </main>
     </div>
-    {% endblock -%} {%- include "../global-footer.njk" -%}
+    {% endblock -%} {%- include "../../src/components/global-footer.njk" -%}
     <script>
       // Search ID
       var cx = '05e92f21f387b4800';

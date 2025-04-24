@@ -6,23 +6,24 @@
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
     <meta name="Keywords" content="California, government" />
-    {% include "../head-js-css.njk" %}
+    {% include "../../src/components/head-js-css.njk" %}
   </head>
   <body class="primary">
     <header role="banner" id="header" class="global-header fixed">
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
       </div>
-      {%- include "../utility-header.njk" -%} {%- include
-      "../modules/branding.html" -%} {%- include "../mobile-controls.njk" %}
+      {%- include "../../src/components/utility-header.njk" -%} {%- include
+      "../modules/branding.html" -%} {%- include
+      "../../src/components/mobile-controls.njk" %}
       <div class="navigation-search">
         <!-- navigation types -->
         {%- if navigation -%} {%- include navigation -%} {%- else -%} {%-
-        include "../navigation.njk" -%} {%- endif %}
+        include "../../src/components/navigation.njk" -%} {%- endif %}
         <div
           id="head-search"
           class="search-container {{ - ' featured-search' if search === 'Featured' }}">
-          {% include "../search.njk" %}
+          {% include "../../src/components/search.njk" %}
         </div>
       </div>
     </header>
@@ -30,6 +31,6 @@
     <div id="main-content" class="main-content">
       <main class="main-primary" id="main">{{ content | safe }}</main>
     </div>
-    {% endblock %} {% include "../global-footer.njk" %}
+    {% endblock %} {% include "../../src/components/global-footer.njk" %}
   </body>
 </html>

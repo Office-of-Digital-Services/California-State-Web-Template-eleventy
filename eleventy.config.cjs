@@ -1,13 +1,18 @@
 //@ts-check
-const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
+
 const domain = "https://template.webstandards.ca.gov";
 
-module.exports = function (
-  /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
-) {
+/**
+ * Configures Eleventy with the specified settings.
+ * @param {import("@11ty/eleventy").UserConfig} eleventyConfig - The Eleventy configuration object.
+ * @returns {Promise<import("@11ty/eleventy").UserConfig>} The configured Eleventy object.
+ */
+module.exports = async function (eleventyConfig) {
+  const { EleventyRenderPlugin } = await import("@11ty/eleventy");
+
   // Copy `src/css/` to `_site/css`, `src/images/` to `_site/images`
   // Copy all static files that should appear in the website root
-  // Copy state tempate code files from NPM
+  // Copy state template code files from NPM
   eleventyConfig.addPassthroughCopy({
     "src/images": "images",
     "src/css": "css",
@@ -15,30 +20,46 @@ module.exports = function (
     "node_modules/@cagovweb/state-template/dist": "state-template"
   });
 
-  //Sorted list of all the samples
+  // Sorted list of all the samples
   eleventyConfig.addFilter(
     "canonical",
     (/** @type {{url:string}} */ page) => domain + page.url
   );
 
-  //Start with default config, easier to configure 11ty later
-  const config = defaultConfig(eleventyConfig);
-
   // allow nunjucks templating in .html files
-  config.htmlTemplateEngine = "njk";
-  config.markdownTemplateEngine = "njk";
-  config.templateFormats = ["html", "njk", "11ty.js", "md"];
+  eleventyConfig.setTemplateFormats(["html", "njk", "11ty.js", "md"]);
+  const nunjucks = require("nunjucks");
+  const njkEnv = new nunjucks.Environment();
+  njkEnv.addFilter(
+    "canonical",
+    (/** @type {{url:string}} */ page) => domain + page.url
+  );
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addGlobalData("domain", domain);
 
-  config.dir = {
-    // site content pages
-    input: "pages",
-    data: "../src/_data",
-    // site structure pages (path is realtive to input directory)
-    includes: "../src/_includes",
-    layouts: "../src/_includes/layouts",
-    // site final outpuut directory
-    output: "_site"
+  eleventyConfig.addWatchTarget("./src/css/");
+  eleventyConfig.addWatchTarget("./src/images/");
+
+  eleventyConfig.setBrowserSyncConfig({
+    files: ["_site/**/*"]
+  });
+
+  eleventyConfig.addPassthroughCopy("src/_data");
+
+  return {
+    // allow nunjucks templating in .html files
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    templateFormats: ["html", "njk", "11ty.js", "md"],
+    dir: {
+      // site content pages
+      input: "pages",
+      includes: "_includes",
+      output: "_site"
+    },
+    // Exclude _includes folder from being processed
+    passthroughFileCopy: true,
+    pathPrefix: "/",
+    dataTemplateEngine: false
   };
-
-  return config;
 };

@@ -4,7 +4,8 @@
   <div class="container p-t-md p-b-lg">
     <main class="main-primary" id="main">
       {#- Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and
-      /src/_data/helpers.js -#} {%- include "../breadcrumbs.njk" %}
+      /src/_data/helpers.js -#} {%- include
+      "../../src/components/breadcrumbs.njk" %}
       <div class="row">
         <div class="col-md-10 mx-auto">{{ content | safe }}</div>
       </div>
