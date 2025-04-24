@@ -22,19 +22,9 @@ export default async function (eleventyConfig) {
     (/** @type {{url:string}} */ page) => domain + page.url
   );
 
-  // allow nunjucks templating in .html files
-  eleventyConfig.setTemplateFormats(["html", "njk", "11ty.js", "md"]);
-
   eleventyConfig.addGlobalData("domain", domain);
 
-  eleventyConfig.addWatchTarget("./src/css/");
-  eleventyConfig.addWatchTarget("./src/images/");
-
-  eleventyConfig.setServerOptions({
-    watch: ["_site/**/*"]
-  });
-
-  eleventyConfig.addPassthroughCopy("src/_data");
+  eleventyConfig.addWatchTarget("./src/**/*");
 
   return {
     // allow nunjucks templating in .html files
