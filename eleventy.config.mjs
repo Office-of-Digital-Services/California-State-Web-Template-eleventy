@@ -33,9 +33,11 @@ export default async function (eleventyConfig) {
     templateFormats: ["html", "njk", "11ty.js", "md"],
     dir: {
       // site content pages
-      input: "pages",
-      includes: "_includes",
-      output: "_site"
+      input: "pages"
+
+      // DEFAULTS
+      // includes: "_includes",
+      // output: "_site"
     }
   };
 }
