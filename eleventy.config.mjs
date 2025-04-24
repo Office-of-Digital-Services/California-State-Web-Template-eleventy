@@ -25,11 +25,6 @@ export default async function (eleventyConfig) {
   // allow nunjucks templating in .html files
   eleventyConfig.setTemplateFormats(["html", "njk", "11ty.js", "md"]);
 
-  eleventyConfig.addFilter(
-    "canonical",
-    (/** @type {{url:string}} */ page) => domain + page.url
-  );
-
   eleventyConfig.addGlobalData("domain", domain);
 
   eleventyConfig.addWatchTarget("./src/css/");
