@@ -1,5 +1,9 @@
 //@ts-check
+import { createRequire } from "node:module";
+
 const domain = "https://template.webstandards.ca.gov";
+const require = createRequire(import.meta.url);
+const helpers = require("./pages/_data/helpers.cjs");
 
 /**
  *
@@ -23,6 +27,7 @@ export default async function (eleventyConfig) {
   );
 
   eleventyConfig.addGlobalData("domain", domain);
+  eleventyConfig.addGlobalData("helpers", helpers);
 
   eleventyConfig.addWatchTarget("./src/**/*");
 
